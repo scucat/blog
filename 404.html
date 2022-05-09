@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.43">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="/images/logo.png"><title>BLOG</title><meta name="description" content="探索永不止步">
+    <link rel="modulepreload" href="/blog/assets/app.16f4d17f.js"><link rel="modulepreload" href="/blog/assets/404.html.2e3753c0.js"><link rel="modulepreload" href="/blog/assets/404.html.6e865a23.js"><link rel="prefetch" href="/blog/assets/index.html.20d8de3f.js"><link rel="prefetch" href="/blog/assets/index.html.013c837f.js"><link rel="prefetch" href="/blog/assets/index.html.a859fa5a.js"><link rel="prefetch" href="/blog/assets/index.html.88590c33.js"><link rel="prefetch" href="/blog/assets/index.html.9415e35e.js"><link rel="prefetch" href="/blog/assets/index.html.6f7b097b.js"><link rel="prefetch" href="/blog/assets/404.2c6715b7.js"><link rel="prefetch" href="/blog/assets/Layout.d8888f8e.js">
+    <link rel="stylesheet" href="/blog/assets/style.7eeccda7.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><div class="theme-default-content"><h1>404</h1><blockquote>页面不存在</blockquote><a href="/blog/" class="">返回主页</a></div></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.16f4d17f.js" defer></script>
+  </body>
+</html>
