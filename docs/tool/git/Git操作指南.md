@@ -1,7 +1,7 @@
 ---
 title: Git基础与命令
 date: 2022-05-09 17:43:57
-permalink: /pages/6350882/
+
 pageClass: custom-page-class
 categories: 
   - 《Git》

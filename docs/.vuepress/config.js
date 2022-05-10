@@ -32,26 +32,58 @@ module.exports = {
         navbar: [
           {
             text: '数学',
-            collapsible: true,
-            link: '/',
+            link: '/math/',
+          },
+          {
+            text: '算法',
+            link: '/algorithm/'
+          },
+          {
+            text: '编程',
+            link: '/code/'
           },
           {
             text: '工具',
-            collapsible: true,
-            children: ['/Git操作指南.md','/Vuepress插件开发.md'],
+            link: '/tool/'
           },
         ],
-        sidebar: [
-          {
-            text: '数学',
-            collapsible: true,
-            link: '/',
-          },
-          {
-            text: '工具',
-            collapsible: true,
-            children: ['/Git操作指南.md','/Vuepress插件开发.md'],
-          },
-        ],
+        sidebar: {
+          '/math/':[
+            {
+              text: '数学',
+              collapsible: true,
+            },
+          ],
+          '/algorithm/':[
+            {
+              text: '算法',
+              collapsible: true,
+              link: '/',
+            },
+          ],
+          '/code/':[
+            {
+              text: '编程',
+              collapsible: true,
+              link: '/',
+            },
+          ],
+          '/tool/':[
+            {
+              text: '工具',
+              collapsible: true,
+              link: '/tool/',
+              children:[
+                {
+                  text: 'Git',
+                  collapsible: true,
+                  children:[
+                    '/tool/git/Git操作指南.md'
+                  ]
+                }
+              ]
+            },
+          ]
+      },
     })
 }
