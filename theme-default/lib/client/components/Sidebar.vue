@@ -4,7 +4,7 @@ import SidebarItems from '@theme/SidebarItems.vue'
 </script>
 
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar no-print">
     <NavbarItems />
     <slot name="top" />
     <SidebarItems />

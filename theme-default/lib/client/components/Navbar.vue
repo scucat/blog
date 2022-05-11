@@ -58,7 +58,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 </script>
 
 <template>
-  <header ref="navbar" class="navbar blur">
+  <header ref="navbar" class="navbar blur no-print">
     <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
 
     <span ref="navbarBrand">

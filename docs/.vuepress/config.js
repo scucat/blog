@@ -65,7 +65,10 @@ module.exports = {
             {
               text: '编程',
               collapsible: true,
-              link: '/',
+              link: '/code/',
+              children:[
+                '/code/Numpy-笔记.md'
+              ]
             },
           ],
           '/tool/':[
