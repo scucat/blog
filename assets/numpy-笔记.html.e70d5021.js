@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as _,a,b as n}from"./app.82ce48ea.js";const o={},s={id:"numpy-\u7B14\u8BB0",tabindex:"-1"},c=a("a",{class:"header-anchor",href:"#numpy-\u7B14\u8BB0","aria-hidden":"true"},"#",-1),r=n(" numpy-\u7B14\u8BB0"),d=[c,r];function h(i,m){return t(),_("h1",s,d)}var p=e(o,[["render",h],["__file","numpy-\u7B14\u8BB0.html.vue"]]);export{p as default};
