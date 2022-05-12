@@ -83,7 +83,8 @@ module.exports = {
                   children:[
                     '/tool/git/Git操作指南.md'
                   ]
-                }
+                },
+                '/tool/常见问题.md'
               ]
             },
           ]
