@@ -10,7 +10,10 @@ module.exports = {
     
     temp: 'temp/.temp',
     cache: 'temp/.chche',
-    head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+    head: [
+      ['link', { rel: 'icon', href: '/images/logo.png' }],
+      ['meta', { name: 'referrer', content: 'no-referrer' }]
+    ],
     plugins: [
       searchPlugin({
           maxSuggestions: 10,
