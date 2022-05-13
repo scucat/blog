@@ -521,3 +521,148 @@ m:
 > 难理解
 ### np.swapaxes
 > 难理解
+
+## numpy 数学运算
+### 位运算
+- np.bitwise_and()：与运算
+- np.bitwise_or()：或运算
+- np.invert()：取反
+- np.left_shift()：左移
+- np.right_shift()：右移
+
+### 三角函数
+- np.sin()：正弦
+- np.cos()：余弦
+- np.tan()：正切
+- np.arcsin()：反正弦
+- np.arccos()：反余弦
+- np.arctan()：反正切
+- np.degrees()：转为角度
+<CodeGroup>
+  <CodeGroupItem title="代码">
+
+```python
+n = np.array([0,30,45,60,90])  
+print('角度：',n)
+
+sin = np.sin(n*np.pi/180)  
+print('\n正弦：',sin)
+
+inv = np.arcsin(sin)  
+print('\n反正弦：',inv)
+
+cos = np.cos(n*np.pi/180)  
+print ('\n余弦：',cos)
+
+inv = np.arccos(cos)  
+print ('\n反余弦：',inv)
+
+tan = np.tan(n*np.pi/180)  
+print ('\n正切：',tan)
+
+inv = np.arctan(tan)  
+print ('\n反正切：',inv)
+print('\n角度：',np.degrees(inv))
+```
+  </CodeGroupItem>
+  <CodeGroupItem title="输出">
+
+```shell:no-line-numbers
+角度： [ 0 30 45 60 90]
+
+正弦： [0.         0.5        0.70710678 0.8660254  1.        ]
+
+反正弦： [0.         0.52359878 0.78539816 1.04719755 1.57079633]
+
+余弦： [1.00000000e+00 8.66025404e-01 7.07106781e-01 5.00000000e-01
+ 6.12323400e-17]
+
+反余弦： [0.         0.52359878 0.78539816 1.04719755 1.57079633]
+
+正切： [0.00000000e+00 5.77350269e-01 1.00000000e+00 1.73205081e+00
+ 1.63312394e+16]
+
+反正切： [0.         0.52359878 0.78539816 1.04719755 1.57079633]
+
+角度： [ 0. 30. 45. 60. 90.]
+```
+  </CodeGroupItem>
+</CodeGroup>
+
+### 算术函数
+
+- np.add()
+- np.subtract()
+- np.multiply()
+- np.divde()
+<CodeGroup>
+  <CodeGroupItem title="代码">
+
+```python
+m = np.arange(9, dtype = np.float_).reshape(3,3)  
+n = np.array([10,10,10])  
+sums = np.add(m,n)
+subtracts = np.subtract(m,n)
+multiplys = np.multiply(m,n)
+divides = np.divide(m,n)
+print ('\n m: \n',m)
+print ('\n n: \n',n)
+print ('\n m+n: \n',sums)
+print ('\n m-n: \n',subtracts)
+print ('\n m*n: \n',multiplys)
+print ('\n m/n: \n',divides)
+```
+  </CodeGroupItem>
+  <CodeGroupItem title="输出">
+
+```shell:no-line-numbers
+ m: 
+ [[0. 1. 2.]
+ [3. 4. 5.]
+ [6. 7. 8.]]
+
+ n: 
+ [10 10 10]
+
+ m+n: 
+ [[10. 11. 12.]
+ [13. 14. 15.]
+ [16. 17. 18.]]
+
+ m-n: 
+ [[-10.  -9.  -8.]
+ [ -7.  -6.  -5.]
+ [ -4.  -3.  -2.]]
+
+ m*n: 
+ [[ 0. 10. 20.]
+ [30. 40. 50.]
+ [60. 70. 80.]]
+
+ m/n: 
+ [[0.  0.1 0.2]
+ [0.3 0.4 0.5]
+ [0.6 0.7 0.8]]
+```
+  </CodeGroupItem>
+</CodeGroup>
+
+### 统计函数
+- np.amin(n, axis)
+- np.amax(n, axis)
+- np.ptp(n, axis)
+- np.percentile(n, q, axis)
+- np.median(n, axis)
+- np.mean(n, axis)
+- np.average(n, axis, weights, returned =  True)
+- np.std(n)
+- np.var(n)
+
+
+**参数说明**：
+
+- n: 输入数组
+- q: 要计算的百分位数，在 0 ~ 100 之间
+- axis: 指定计算的轴
+- weights: np.average的权重参数
+- returned: np.average中该参数设为 True，则返回权重的和 
