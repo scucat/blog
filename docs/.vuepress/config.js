@@ -54,7 +54,12 @@ module.exports = {
           '/math/':[
             {
               text: '数学',
-              collapsible: true,
+              children:[
+                '/math/calculus/',
+                '/math/linear_algebra/',
+                '/math/statistic/',
+                '/math/optimization/'
+              ]
             },
           ],
           '/algorithm/':[
@@ -80,6 +85,7 @@ module.exports = {
               collapsible: true,
               link: '/tool/',
               children:[
+                '/tool/Markdown语法.md',
                 {
                   text: 'Git',
                   collapsible: true,
