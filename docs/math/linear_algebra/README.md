@@ -1,6 +1,7 @@
 ---
 title: 线性代数
 date: 2022-05-17 11:12:27
+sidebar: auto
 permalink: /linear_algebra/
 categories: 
   - 数学

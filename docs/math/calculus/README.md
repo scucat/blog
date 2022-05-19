@@ -1,7 +1,6 @@
 ---
 title: 微积分
 date: 2022-05-17 11:10:57
-permalink: /calculus/
 categories: 
   - 数学
 tags: 

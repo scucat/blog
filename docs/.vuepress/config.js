@@ -1,7 +1,7 @@
 const { searchPlugin } = require('@vuepress/plugin-search')
 const { shikiPlugin } = require('@vuepress/plugin-shiki')
 const { defaultTheme } = require('../../theme-default')
-
+var { sidebar } = require('./autobar')
 module.exports = {
     base: '/blog/',
     lang: 'zh-CN',
@@ -46,57 +46,27 @@ module.exports = {
             link: '/code/'
           },
           {
-            text: '工具',
-            link: '/tool/'
+            text: '资源',
+            children:[
+              {
+                text: '工具',
+                link: '/tool/',
+              },
+              {
+                text: '书籍',
+                link: '/book/',
+              },
+              {
+                text: '网站',
+                link: '/book/',
+              },
+              {
+                text: '软件',
+                link: '/software/',
+              },
+            ]
           },
         ],
-        sidebar: {
-          '/math/':[
-            {
-              text: '数学',
-              children:[
-                '/math/calculus/',
-                '/math/linear_algebra/',
-                '/math/statistic/',
-                '/math/optimization/'
-              ]
-            },
-          ],
-          '/algorithm/':[
-            {
-              text: '算法',
-              collapsible: true,
-              link: '/',
-            },
-          ],
-          '/code/':[
-            {
-              text: '编程',
-              collapsible: true,
-              link: '/code/',
-              children:[
-                '/code/Numpy-笔记.md'
-              ]
-            },
-          ],
-          '/tool/':[
-            {
-              text: '工具',
-              collapsible: true,
-              link: '/tool/',
-              children:[
-                '/tool/Markdown语法.md',
-                {
-                  text: 'Git',
-                  collapsible: true,
-                  children:[
-                    '/tool/git/Git操作指南.md'
-                  ]
-                },
-                '/tool/常见问题.md'
-              ]
-            },
-          ]
-      },
+        sidebar:sidebar,
     })
 }
