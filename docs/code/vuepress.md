@@ -14,4 +14,4 @@ author:
 
 ## 修改默认主题样式
 
-![666](https://gitee.com/scucat/ImageHub/raw/master/images/2022-05/20220519173610.png)
+![666](https://raw.githubusercontent.com/scucat/images/master/20220523103414.png)
