@@ -247,6 +247,19 @@ div[class*='language-'] {
   }
 }
 
+.code-copy {
+  font-family: var(--font-family-code);
+  font-size: 0.5rem;
+  color: rgb(158, 158, 158);
+  position: absolute;
+  top: .8rem;
+  right: 2rem;
+  cursor: pointer;
+}
+.code-copy:hover{
+  color:white;
+}
+
 @each $lang in $codeLang {
   div[class*='language-'].ext-#{$lang} {
     &:before {

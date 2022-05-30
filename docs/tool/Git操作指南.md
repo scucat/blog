@@ -1,5 +1,4 @@
 ---
-title: Git基础与命令
 date: 2022-05-09 17:43:57
 
 pageClass: custom-page-class
@@ -12,7 +11,7 @@ author:
   link: https://github.com/scucat
 ---
 
-# Git基础与命令
+# git
 
 官方文档（中文）：https://git-scm.com/book/zh/v2
 

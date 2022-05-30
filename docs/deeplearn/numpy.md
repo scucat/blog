@@ -1,7 +1,7 @@
 ---
 date: 2022-05-11 09:41:50
 categories: 
-  - 编程
+  - 深度学习
 tags: 
   - numpy
 author: 
@@ -9,7 +9,7 @@ author:
   link: https://github.com/scucat
 ---
 
-# numpy-笔记
+# numpy
 > [菜鸟-numpy](https://www.runoob.com/numpy/numpy-dtype.html)
 ## numpy 数组属性
 numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)

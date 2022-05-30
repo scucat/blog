@@ -50,7 +50,7 @@ module.exports = {
 }
 ```
 
-## gitee 2022-05-18 进行严格的代码审查导致图床失效
+**gitee 2022-05-18 进行严格的代码审查导致图床失效**
 改用github做图床： https://www.jianshu.com/p/d51258ef5484
 
 还好目前图片不多，从gitee再转移到github很方便

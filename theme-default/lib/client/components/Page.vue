@@ -2,7 +2,7 @@
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { computed, ComputedRef } from 'vue'
+import { computed, ComputedRef, onMounted } from 'vue'
 import type { 
   DefaultThemeNormalPageFrontmatter,
   DefaultThemePageFrontmatter,
@@ -17,21 +17,43 @@ const author = frontmatter.value.author.name
 var date = frontmatter.value.date
 date = date.toString().substring(0,10)
 
-var beforePrint = function(){
-  console.log('Functionality to run before printing.')
-  // var dom = document.getElementsByClassName('theme-default-content')[0];
-  // var win = window.open('');
-  // win.document.write(dom.outerHTML);
-  // win.print();
-  // win.close();
+/**
+ * 复制单行内容到粘贴板
+ * content : 需要复制的内容
+ * message : 复制完后的提示，不传则默认提示"复制成功"
+ */
+function copyToClip(content, message) {
+    var aux = document.createElement("textarea"); 
+    // aux.setAttribute("value", content); // 这样写没有保留换行符
+    aux.value = content
+    document.body.appendChild(aux); 
+    aux.select();
+    document.execCommand("copy"); 
+    document.body.removeChild(aux);
 }
 
-var afterPrint = function(){
-  console.log('Functionality to run after printing')
-}
-
-window.onbeforeprint = beforePrint
-window.onafterprint = afterPrint
+onMounted(() => {
+  console.log('mounted')
+  var codes = document.getElementsByClassName('shiki')
+  console.log(codes.length)
+  for (let i = 0; i < codes.length; i++) {
+    var code = codes[i]
+    var copy_div = document.createElement("div")
+    copy_div.classList.add("code-copy")
+    copy_div.setAttribute('title','复制代码')
+    copy_div.innerText = '复制'
+    code.appendChild(copy_div)
+    copy_div.onclick = function(){
+      var previous = this.previousSibling.textContent
+      copyToClip(previous,null)
+      this.innerText = '复制成功'
+    }
+    copy_div.onmouseleave = function(){
+      let that = this
+      setTimeout(function(){ that.innerText = '复制'; }, 5000);
+    }
+  }
+})
 </script>
 
 <template>

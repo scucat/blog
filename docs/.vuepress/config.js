@@ -34,6 +34,10 @@ module.exports = {
         toggleDarkMode:'切换夜间模式',
         navbar: [
           {
+            text: '深度学习',
+            link: '/deeplearn/',
+          },
+          {
             text: '数学',
             link: '/math/',
           },
@@ -42,7 +46,7 @@ module.exports = {
             link: '/algorithm/'
           },
           {
-            text: '编程',
+            text: '代码',
             link: '/code/'
           },
           {
