@@ -253,11 +253,18 @@ div[class*='language-'] {
   color: rgb(158, 158, 158);
   position: absolute;
   top: .8rem;
-  right: 2rem;
+  right: 2.5rem;
+  display: none;
   cursor: pointer;
 }
 .code-copy:hover{
   color:white;
+}
+
+.shiki:hover{
+  .code-copy{
+    display: block;
+  }
 }
 
 @each $lang in $codeLang {

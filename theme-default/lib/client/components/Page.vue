@@ -35,6 +35,7 @@ function copyToClip(content, message) {
 onMounted(() => {
   console.log('mounted')
   var codes = document.getElementsByClassName('shiki')
+  //var codes = document.querySelectorAll('')
   console.log(codes.length)
   for (let i = 0; i < codes.length; i++) {
     var code = codes[i]
