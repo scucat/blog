@@ -18,6 +18,8 @@ function getMarkdownYaml(filePath){
  */
  function fileDisplayAsync(filePath) {
     var result = []
+    var result_dir = []
+    var result_file = []
     var files = fs.readdirSync(filePath)
     files.forEach(function(filename) {
         var filepath = path.join(filePath, filename);
@@ -28,7 +30,7 @@ function getMarkdownYaml(filePath){
         link = link.replace(/\\/g,'/')
         if (isFile) {
             if (filename!='README.md') {
-                result.push(link)
+                result_file.push(link)
             }
         }
         if (isDir) {
@@ -49,11 +51,11 @@ function getMarkdownYaml(filePath){
                 item.children = children
                 item.collapsible = true
             }
-            result.push(item)
+            result_dir.push(item)
         }
 
     })
-    
+    result = result_dir.concat(result_file)
     return result
 }
 

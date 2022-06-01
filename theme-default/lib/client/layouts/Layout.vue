@@ -6,6 +6,7 @@
     @touchend="onTouchEnd"
   >
     <slot name="navbar">
+      <ToggleMenu @toggle="toggleSidebar2" />
       <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
         <template #before>
           <slot name="navbar-before" />
@@ -16,7 +17,7 @@
       </Navbar>
     </slot>
 
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
+    <!-- <div class="sidebar-mask" @click="toggleSidebar(false)" /> -->
 
     <slot name="sidebar">
       <Sidebar>
@@ -57,6 +58,7 @@ import Home from '@theme/Home.vue'
 import Navbar from '@theme/Navbar.vue'
 import Page from '@theme/Page.vue'
 import Sidebar from '@theme/Sidebar.vue'
+import ToggleMenu from '@theme/ToggleMenu.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref, Transition } from 'vue'
 import { useRouter } from 'vue-router'
@@ -81,6 +83,44 @@ const sidebarItems = useSidebarItems()
 const isSidebarOpen = ref(false)
 const toggleSidebar = (to?: boolean): void => {
   isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
+}
+
+// 处理toggleSidebar2 width过小时不美观的问题
+window.onresize = function(){
+  var body_width = document.body.clientWidth
+  if (body_width<=718) {
+    var page = document.getElementsByClassName('page')[0]
+    var side = document.getElementsByClassName('sidebar')[0]
+    var side_width = side.clientWidth
+    if (side_width==0) {
+      side.style.display = "translateX(-100%);"
+      side.style.transform = "translateX(-100%);"
+      side.style.width = "20rem"
+      
+    }
+    page.style.paddingLeft = 0
+  }
+}
+
+const toggleSidebar2 = () => {
+  
+  var side = document.getElementsByClassName('sidebar')[0]
+  var side_width = side.clientWidth
+  var page = document.getElementsByClassName('page')[0]
+  var style = window.getComputedStyle(page,null)
+  var body_width = document.body.clientWidth
+  if (side_width>0) {
+    toggleSidebar(false)
+    side.style.width = "0"
+    page.style.paddingLeft = 0
+  } else {
+    toggleSidebar(true)
+    
+    side.style.width = "20rem"
+    if (body_width>719) {
+      page.style.paddingLeft = "20rem"
+    }
+  }
 }
 const touchStart = { x: 0, y: 0 }
 const onTouchStart = (e): void => {

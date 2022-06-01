@@ -6,7 +6,7 @@ home:  ture
 heroText: SCUCAT
 tagline: 科学是人类进步的阶梯
 heroImage: /images/logo.png
-pageClass: custom-page-class
+pageClass: no-toggle-menu
 categories: 
   - 《Git》学习笔记
 tags: 

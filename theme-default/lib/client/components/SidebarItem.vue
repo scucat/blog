@@ -34,6 +34,12 @@ const itemClass = computed(() => ({
 const isOpen = ref(true)
 const onClick = ref<(() => void) | undefined>(undefined)
 
+var state = item.value.children?.length
+console.log(state,item)
+if (state) {
+  item.value.collapsible = true
+}
+
 if (item.value.collapsible) {
   // active item is open by default
   isOpen.value = isActive.value
@@ -46,6 +52,7 @@ if (item.value.collapsible) {
     isOpen.value = isActive.value
   })
 }
+
 </script>
 
 <template>
@@ -58,12 +65,13 @@ if (item.value.collapsible) {
       @click="onClick"
       @keydown.enter="onClick"
     >
-      {{ item.text }}
+      
       <span
         v-if="item.collapsible"
         class="arrow"
         :class="isOpen ? 'down' : 'right'"
       />
+      {{ item.text }}
     </p>
 
     <DropdownTransition v-if="item.children?.length">

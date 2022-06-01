@@ -12,7 +12,19 @@ module.exports = {
     cache: 'temp/.chche',
     head: [
       ['link', { rel: 'icon', href: '/images/logo.png' }],
-      ['meta', { name: 'referrer', content: 'no-referrer' }]
+      [
+        'script',
+        {},
+        `var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?81fae81312afdc486043636c52b4a4f4";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();`
+      ],
+      // 这是为了解决 gitee 图片无法加载，图床已经切换至github了
+      // ['meta', { name: 'referrer', content: 'no-referrer' }] 
     ],
     plugins: [
       searchPlugin({
