@@ -39,6 +39,8 @@ module.exports = {
             // Public 文件路径
         logo: '/images/logo.png',
         repo: 'scucat/blog',
+        docsDir: 'docs',
+        docsBranch: 'master',
         editLinkText: '编辑',
         lastUpdatedText: '更新时间',
         notFound:['迷路了','没有该页面','页面不存在','404'],

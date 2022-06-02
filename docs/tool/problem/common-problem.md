@@ -54,3 +54,14 @@ module.exports = {
 改用github做图床： https://www.jianshu.com/p/d51258ef5484
 
 还好目前图片不多，从gitee再转移到github很方便
+
+## edge可以访问github,chrome不行
+https://blog.csdn.net/weixin_45867895/article/details/122214391
+
+1. chrome 打开 `chrome://net-internals/`
+
+2. 进入后点击左边的 Proxy 依次点击里面的 Re-apply settings 和 Clear bad proxies
+
+然后点击左边的 DNS 点击 Host resolver cache 右边的 Clear host cache
+
+最终亲测成功！！！！！
