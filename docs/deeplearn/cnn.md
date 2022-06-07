@@ -10,7 +10,7 @@ author:
   link: https://github.com/scucat
 ---
 
-# 卷积神经网络
+# 卷积神经网络 CNN
 卷积神经网络 CNN (Convolutional Neural Network)
 
 下图的动画中，绿色表示原图像素值，红色数字表示卷积核中的参数，黄色表示卷积核在原图上滑动。右图表示卷积运算之后生成的feature map。
