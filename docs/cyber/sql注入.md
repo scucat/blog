@@ -117,3 +117,15 @@ limit 1,1 没有回显，说明只有一个用户
 [ModHeader下载](http://bbs.zkaq.cn/?t/138.html)
 
 > Access没有数据库名，但猜表名、列名，用手注非常耗时。管理员这里直接猜得的表名是 admin 、列名是username、password
+
+## 习题3 存储型XSS
+教程：https://bbs.zkaq.cn/?t/157.html
+
+公开XSS平台：http://xsspt.com
+
+这题是一道存储型XSS偷取cookie的题目。（因为flag在cookie中，XSS BOT每10秒就带着有flag的cookie去访问查看留言的页面）
+
+既然是存储型XSS，那么我们先用弹窗去尝试（如果不明白为什么弹窗尝试的话建议先去看我们的直播回放），那么就开始插入`<script>alert('zkaq')</script>`
+
+## 习题4 提权
+图片木马制作：https://bbs.zkaq.cn/?t/159.html
