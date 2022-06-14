@@ -14,6 +14,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "colorpicker-v3": "^2.10.2",
     "js-yaml": "^4.1.0"
   }
 }

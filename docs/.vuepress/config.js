@@ -82,6 +82,18 @@ module.exports = {
                 text: '软件',
                 link: '/software/',
               },
+              {
+                text: '分类',
+                link: '/catgory/',
+              },
+              {
+                text: '归档',
+                link: '/timeline/',
+              },
+              {
+                text: '主题设置',
+                link: '/config/',
+              },
             ]
           },
         ],

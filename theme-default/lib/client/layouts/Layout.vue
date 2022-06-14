@@ -32,7 +32,9 @@
 
     <slot name="page">
       <Home v-if="frontmatter.home" />
-
+      <Catgory v-else-if="frontmatter.catgory" />
+      <TimeLine v-else-if="frontmatter.timeline"/>
+      <Config v-else-if="frontmatter.config"/>
       <Transition
         v-else
         name="fade-slide-y"
@@ -55,6 +57,9 @@
 
 <script setup lang="ts">
 import Home from '@theme/Home.vue'
+import TimeLine from '@theme/TimeLine.vue'
+import Catgory from '@theme/Catgory.vue'
+import Config from '@theme/Config.vue'
 import Navbar from '@theme/Navbar.vue'
 import Page from '@theme/Page.vue'
 import Sidebar from '@theme/Sidebar.vue'
@@ -72,6 +77,7 @@ import {
 const page = usePageData()
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
+
 
 // navbar
 const shouldShowNavbar = computed(

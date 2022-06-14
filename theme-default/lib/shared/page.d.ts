@@ -4,12 +4,17 @@ export interface DefaultThemePageData extends GitPluginPageData {
     filePathRelative: string | null;
 }
 export interface DefaultThemePageFrontmatter {
+    catgory?:boolean;
+    timeline?:boolean;
+    config?:boolean;
     home?: boolean;
     navbar?: boolean;
     pageClass?: string;
 }
 export interface DefaultThemeHomePageFrontmatter extends DefaultThemePageFrontmatter {
     home: true;
+    catgory:false;
+    timeline:false;
     heroImage?: string;
     heroImageDark?: string;
     heroAlt?: string;

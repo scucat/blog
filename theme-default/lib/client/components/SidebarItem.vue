@@ -35,7 +35,7 @@ const isOpen = ref(true)
 const onClick = ref<(() => void) | undefined>(undefined)
 
 var state = item.value.children?.length
-console.log(state,item)
+
 if (state) {
   item.value.collapsible = true
 }

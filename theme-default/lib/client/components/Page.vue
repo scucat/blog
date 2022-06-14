@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
-import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { computed, ComputedRef, onMounted } from 'vue'
+import { usePageFrontmatter } from '@vuepress/client'
+import { onMounted } from 'vue'
 import type { 
-  DefaultThemeNormalPageFrontmatter,
   DefaultThemePageFrontmatter,
-  DefaultThemePageData,
    } from '../../shared'
 
-const page = usePageData<DefaultThemePageData>()
-console.log(page)
 
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
 const author = frontmatter.value.author.name 
@@ -33,10 +29,7 @@ function copyToClip(content, message) {
 }
 
 onMounted(() => {
-  console.log('mounted')
   var codes = document.getElementsByClassName('shiki')
-  //var codes = document.querySelectorAll('')
-  console.log(codes.length)
   for (let i = 0; i < codes.length; i++) {
     var code = codes[i]
     var copy_div = document.createElement("div")
