@@ -598,3 +598,6 @@ git push origin master
 然后从新 yarn install, .gitignore就起效了
 
 [[toc]]
+
+
+## 本地git连接

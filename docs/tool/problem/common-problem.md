@@ -65,3 +65,21 @@ https://blog.csdn.net/weixin_45867895/article/details/122214391
 然后点击左边的 DNS 点击 Host resolver cache 右边的 Clear host cache
 
 最终亲测成功！！！！！
+
+## yarn:无法加载文件...\yarn.ps1
+
+管理员打开 **powershell** 窗口
+```powershell
+PS C:\WINDOWS\system32> get-ExecutionPolicy
+Restricted
+PS C:\WINDOWS\system32> set-ExecutionPolicy RemoteSigned
+
+执行策略更改
+执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170
+中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?
+[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”): Y
+PS C:\WINDOWS\system32> get-ExecutionPolicy
+RemoteSigned
+PS C:\WINDOWS\system32>
+
+```
